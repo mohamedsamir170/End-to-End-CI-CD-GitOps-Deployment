@@ -35,17 +35,17 @@ The first step of the project involved containerizing the Todo List Node.js appl
 git clone https://github.com/Ankit6098/Todo-List-nodejs.git
 ```
 
-![clone.png](clone.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/clone.png?raw=true)
 
 The `.env` file was updated to include a custom MongoDB connection string using MongoDB Atlas. This file was not committed to version control for security reasons.
 
-![code.png](code.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code.png?raw=true)
 
 ### Dockerfile
 
 A `Dockerfile` was created to package the Node.js application into a lightweight and secure Docker image using the `node:22-alpine` base image.
 
-![code.png](code%201.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code%201.png?raw=true)
 
 ### Security Considerations:
 
@@ -53,13 +53,13 @@ A `Dockerfile` was created to package the Node.js application into a lightweight
 - File permissions and ownership are tightly restricted inside the container.
 - A **health check** was added to monitor application readiness and container health.
 
-### Build The Docker Image
+### Build the Docker Image
 
 ```bash
 docker build -t mohamedsamir170/todolist:test .
 ```
 
-![image.png](image.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image.png?raw=true)
 
 ### Start and Access the Container
 
@@ -67,7 +67,7 @@ docker build -t mohamedsamir170/todolist:test .
 docker run -d -p 4001:4000 --name todolist mohamedsamir170/todolist:test
 ```
 
-![image.png](image%201.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%201.png?raw=true)
 
 The Website is accessible at: 
 
@@ -75,7 +75,7 @@ The Website is accessible at:
 localhost:4001
 ```
 
-![image.png](image%202.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%202.png?raw=true)
 
 ### CI/CD Pipeline with GitHub Actions
 
@@ -87,9 +87,9 @@ A GitHub Actions workflow was created under `.github/workflows/main.yml` to auto
 
 The pipeline was triggered automatically on every push to the `main` branch.
 
-![code.png](code%202.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code%202.png?raw=true)
 
-![image.png](image%203.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%203.png?raw=true)
 
 ---
 
@@ -98,9 +98,9 @@ The pipeline was triggered automatically on every push to the `main` branch.
 - `DOCKERHUB_USERNAME`
 - `DOCKERHUB_TOKEN`
 
-![image.png](image%204.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%204.png?raw=true)
 
-![image.png](image%205.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%205.png?raw=true)
 
 These were used to authenticate securely with Docker Hub and prevent credentials from being hardcoded in the workflow.
 
@@ -114,7 +114,7 @@ After successful execution of the pipeline, the Docker image was published to Do
 docker.io/mohamedsamir170/todolist:latest
 ```
 
-![image.png](image%206.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%206.png?raw=true)
 
 This image was then pulled and used for deployment in Part 3 (Docker Compose) and Part 4 (Kubernetes).
 
@@ -130,7 +130,7 @@ In this part of the project, Ansible was used to automate the configuration of a
 - SSH access was configured using a PEM key file.
 - The target host was declared in an inventory file (Ansible/hosts) as follows:
 
-![code.png](code%203.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code%203.png?raw=true)
 
 ### Ansible Playbooks
 
@@ -144,7 +144,7 @@ Tasks performed:
 - Executes the script using a shell command and logs the output to `/var/log/docker-installation.txt`
 - Starts the Docker service and ensures it is enabled on system startup
 
-![code.png](code%204.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code%204.png?raw=true)
 
 ### 2. `deploy-todolist.yaml`
 
@@ -156,7 +156,7 @@ Tasks performed:
 - Copied local project files using the `synchronize` module while excluding `.git` and `node_modules`
 - Executed `docker-compose up -d` inside the deployment directory to launch the application and the Watchtower container
 
-![code.png](code%205.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code%205.png?raw=true)
 
 ### Running Ansible Playbooks
 
@@ -174,7 +174,7 @@ To run the playbook:
 ansible-playbook -i Ansible/hosts Ansible/docker-install.yaml
 ```
 
-![image.png](image%207.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%207.png?raw=true)
 
 After execution, Docker and Docker Compose should be installed. You can verify this by SSHing into the server and running:
 
@@ -183,7 +183,7 @@ docker --version
 docker compose version
 ```
 
-![image.png](image%208.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%208.png?raw=true)
 
 ### `deploy-todolist.yaml` – Deploy the Todo List Application
 
@@ -195,7 +195,7 @@ To run the deployment playbook:
 ansible-playbook -i Ansible/hosts Ansible/deploy-todolist.yaml
 ```
 
-![image.png](image%209.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%209.png?raw=true)
 
 Once completed, verify that the containers are running on the remote server:
 
@@ -203,7 +203,7 @@ Once completed, verify that the containers are running on the remote server:
 docker ps
 ```
 
-![image.png](image%2010.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%210.png?raw=true)
 
 ### Outcome
 
@@ -256,7 +256,8 @@ Once deployed, the services were running and accessible on port 4010. To test th
 docker logs -f watchtower
 ```
 
-![Screenshot 2025-07-28 124055.png](Screenshot_2025-07-28_124055.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/Screenshot_2025-07-28_124055.png?raw=true)
+
 
 ## Part 4: Kubernetes Deployment with ArgoCD (Bonus)
 
@@ -290,7 +291,7 @@ The manifests were applied using Kustomize via:
 kubectl apply -k base/
 ```
 
-![image.png](image%2011.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2011.png?raw=true)
 
 Deployment was verified with:
 
@@ -299,7 +300,7 @@ kubectl get pods
 kubectl get svc
 ```
 
-![image.png](image%2012.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2012.png?raw=true)
 
 ---
 
@@ -309,7 +310,7 @@ To implement automated Continuous Delivery (CD) in a declarative and GitOps-base
 
 ArgoCD continuously monitors the Git repository and ensures the live Kubernetes environment always matches the desired configuration defined in Git. Any changes committed to the repository are automatically synced to the cluster.
 
-## Argo Cd Installation
+## ArgoCD Installation
 
 1. Create ArgoCD namespace
 
@@ -317,13 +318,13 @@ ArgoCD continuously monitors the Git repository and ensures the live Kubernetes 
 kubectl create ns argocd
 ```
 
-1. Install Argo CD Core Components
+1. Install ArgoCD Core Components
 
 ```bash
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-![image.png](image%2013.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2013.png?raw=true)
 
 1. Verify the installation
 
@@ -331,15 +332,15 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl get all -n argocd
 ```
 
-![image.png](image%2014.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2014.png?raw=true)
 
-## Retrive Argo CD Admin Password
+## Retrieve ArgoCD Admin Password
 
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 ```
 
-![image.png](image%2015.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2015.png?raw=true)
 
 - **Username:** admin
 - **Password:** ManOLUarYAOQqCzy
@@ -352,23 +353,23 @@ By default, the Argo CD API server is not externally accessible. Use port forwar
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-![image.png](image%2016.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2016.png?raw=true)
 
 The API server can then be accessed using https://localhost:8080
 
-![image.png](image%2017.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2017.png?raw=true)
 
-![image.png](image%2018.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2018.png?raw=true)
 
-## Login to Argo CD using argocd Cli
+## Login to ArgoCD using argocd Cli
 
 ```bash
 argocd login localhost:8080 --username admin --password ManOLUarYAOQqCzy --insecure
 ```
 
-![image.png](image%2019.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2019.png?raw=true)
 
-## Connecting Argo CD to a GitHub Repository
+## Connecting ArgoCD to a GitHub Repository
 
 Argo CD requires a **GitHub access token** to authenticate and access your GitHub repository. Follow these steps to set it up:
 
@@ -378,11 +379,11 @@ Argo CD requires a **GitHub access token** to authenticate and access your GitHu
 2. Navigate to **Developer settings > Personal access tokens**.
 3. Click **"Generate new token"**, select the appropriate scopes:
     
-    ![Screenshot 2025-07-28 111251.png](Screenshot_2025-07-28_111251.png)
+   ![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/Screenshot_2025-07-28_111251.png?raw=true)
     
 4. Copy the token and store it securely.
 
-### Step 2: Add the Token to Argo CD
+### Step 2: Add the Token to ArgoCD
 
 Use the `argocd` CLI to add the GitHub repository and authenticate using the token:
 
@@ -392,9 +393,9 @@ argocd repo add https://github.com/mohamedsamir170/todolist.git \
   --password ghp_*******************************ntQc
 ```
 
-![image.png](image%2020.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2020.png?raw=true)
 
-![image.png](image%2021.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2021.png?raw=true)
 
 ### Declarative ArgoCD Application Manifest
 
@@ -402,7 +403,7 @@ An **`Application` custom resource** was created and applied directly to the Kub
 
 This YAML manifest defines the `todo-list` application and instructs ArgoCD to automatically deploy and synchronize it with the Kubernetes manifests in the GitHub repository.
 
-![code.png](code%206.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/code%206.png?raw=true)
 
 ### Key Features Enabled
 
@@ -417,4 +418,4 @@ This YAML manifest defines the `todo-list` application and instructs ArgoCD to a
 kubectl apply -f argo-cd/todo-list.yaml
 ```
 
-![image.png](image%2022.png)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2022.png?raw=true)

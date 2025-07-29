@@ -395,7 +395,7 @@ argocd repo add https://github.com/mohamedsamir170/todolist.git \
 
 ![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2020.png?raw=true)
 
-![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2021.png?raw=true)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/Untitled%20design.png?raw=true)
 
 ### Declarative ArgoCD Application Manifest
 

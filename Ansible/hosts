@@ -1,0 +1,5 @@
+[webservers]
+ec2-54-165-213-126.compute-1.amazonaws.com
+[webservers:vars]
+ansible_ssh_private_key_file=~/.ssh/Ansible.pem
+ansible_user=ubuntu

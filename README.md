@@ -203,7 +203,7 @@ Once completed, verify that the containers are running on the remote server:
 docker ps
 ```
 
-![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%210.png?raw=true)
+![image alt](https://github.com/mohamedsamir170/todolist/blob/main/Images/image%2010.png?raw=true)
 
 ### Outcome
 

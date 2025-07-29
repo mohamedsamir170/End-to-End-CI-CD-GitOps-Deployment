@@ -1,0 +1,20 @@
+---
+- name: Download Docker and Docker Compose
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Download docker script
+      get_url:
+        url: https://get.docker.com
+        dest: /tmp/get-docker.sh
+        mode: '0755'
+
+    - name: Run Docker install script
+      ansible.builtin.shell: /tmp/get-docker.sh >> /var/log/docker-installation.txt
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+

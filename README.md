@@ -1,10 +1,8 @@
-# FortStack
-
-# DevOps Internship Task – Documentation
+# End-to-End-CI-CD-GitOps-Deployment
 
 ## Overview
 
-This project is part of a DevOps internship technical assessment. The task is divided into four main parts, covering containerization, CI/CD, configuration management, and deployment using Kubernetes with GitOps. Each part aims to simulate real-world DevOps practices using open-source tools.
+The task is divided into four main parts, covering containerization, CI/CD, configuration management, and deployment using Kubernetes with GitOps. Each part aims to simulate real-world DevOps practices using open-source tools.
 
 ---
 
